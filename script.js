@@ -44,7 +44,6 @@ class todoMaker {
     // puts textbox in focus once a list item is generated
     let textBox = document.querySelector(".textbox-" + ID);
     textBox.focus();
-    this.saveData();
   }
 
   // setupDraggable(parentElement, ID) {
@@ -131,7 +130,6 @@ class todoMaker {
 
     editButton.addEventListener("click", () => {
       this.editTextContent(parentElement, editButton, ID);
-      this.saveData();
     });
 
     parentElement.appendChild(editButton);
@@ -159,6 +157,7 @@ class todoMaker {
       // parentElement.setAttribute("draggable", "true");
     } else {
       this.iconChanger(editButton, iconNames[1]);
+      console.log(newFlagState);
       // enables editing
       textBox.removeAttribute("readonly", "readonly");
       // parentElement.setAttribute("draggable", "false");
@@ -200,13 +199,11 @@ class todoMaker {
       // if state complete -> move to other category
       newParent.appendChild(checkBox.parentElement);
       textInput.style.textDecoration = "line-through";
-      this.saveData();
     } else {
       // change state to unchecked
       // move to unchecked category
       oldParent.appendChild(checkBox.parentElement);
       textInput.style.textDecoration = "none";
-      this.saveData();
     }
   }
 
@@ -230,7 +227,6 @@ class todoMaker {
     if (elementToDelete) {
       elementToDelete.parentNode.removeChild(elementToDelete);
     }
-    this.saveData();
   }
 
   createIcon(iconNames, parentButton) {
