@@ -1,0 +1,123 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.container {
+  border: solid black 2px;
+  border-radius: 30px;
+  width: 25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 3em;
+  min-width: fit-content;
+  margin: 20px;
+  // box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  font-family: Nunito;
+  display: inline-block;
+  padding-top: 13px;
+}
+
+ul {
+  margin: 0;
+  padding: 20px;
+
+  .task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 20px;
+    list-style: none;
+    list-style-type: none;
+    border: solid black 2px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.35);
+  }
+
+  .is-dragging {
+    background-color: grey;
+    opacity: 50%;
+    input {
+      background-color: grey;
+    }
+  }
+
+  input {
+    outline: none;
+    border: none;
+    font-family: Nunito;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+// reset the button colors
+button {
+  border: none;
+  background-color: transparent;
+}
+
+span {
+  :hover {
+    border-radius: 7px;
+    background-color: #cdcdcd;
+    cursor: pointer;
+  }
+}
+
+// this stops you dragging the picture around
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  width: 23px;
+  height: 23px;
+  margin-right: 20px;
+  padding: 0px;
+  border: 2px solid black;
+  border-radius: 5px;
+  appearance: none; // controls the stupid fucking looks
+  background-color: transparent;
+  outline: none;
+  transition: outline 0.1s;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  // background-color: black;
+  // background-size: cover;
+  padding: 2px;
+}
+
+.checkbox:not(:disabled):checked {
+  background-image: url("/icons/check.svg");
+  background-color: black;
+  border: 2px solid black;
+  background-size: 25px;
+  background-position: center center;
+}
+
+.add-button {
+  margin-bottom: 22px;
+}
+
+.add-icon {
+  height: 32px;
+  width: 32px;
+}
